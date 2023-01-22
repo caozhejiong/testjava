@@ -30,6 +30,8 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package exec:java --file pom.xml
+    - name: Run a script
+      run: echo GITHUB_WORKSPACE $GITHUB_WORKSPACE/target/testjava-0.0.1-SNAPSHOT.jar
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.2
       with:
